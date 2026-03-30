@@ -2,11 +2,17 @@
 
 A fun and interactive browser-based Whack-A-Mole game built using HTML, CSS, and JavaScript.
 
-🎮 **[Play Live →](https://manyagkarle13.github.io/whack-a-mole/)**
+---
+
+## 🎮 Play Live
+
+👉 https://manyagkarle13.github.io/whack-a-mole/
+
+---
 
 ## 🎯 How to Play
 
-* A mole and a bomb appear randomly across 9 holes
+* A mole and a bomb appear randomly across **9 holes**
 * Click the **mole** to score points
 * Avoid the **bomb** — hitting it costs one life
 * You have **3 lives** and **30 seconds** to get the highest score
@@ -18,7 +24,7 @@ A fun and interactive browser-based Whack-A-Mole game built using HTML, CSS, and
 * Smooth mole animations
 * Lives system with bomb penalty
 * Increasing difficulty as score grows
-* Fully responsive and works in modern browsers
+* Works in any modern browser
 
 ---
 
@@ -42,5 +48,7 @@ Then open:
 ```text
 index.html
 ```
+
 ---
-Built by [Manya](https://github.com/manyagkarle13)
+
+Built by **Manya**
