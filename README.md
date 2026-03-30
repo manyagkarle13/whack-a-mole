@@ -15,7 +15,7 @@ A fun and interactive browser-based Whack-A-Mole game built using HTML, CSS, and
 * A mole and a bomb appear randomly across **9 holes**
 * Click the **mole** to score points
 * Avoid the **bomb** — hitting it costs one life
-* You have **3 lives** and **30 seconds** to get the highest score
+* You have **30 seconds** to get the highest score
 
 ---
 
