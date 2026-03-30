@@ -1,3 +1,53 @@
+// Sound effects using Web Audio API (no files needed!)
+const AudioCtx = window.AudioContext || window.webkitAudioContext;
+const ctx = new AudioCtx();
+
+function ensureAudioReady() {
+  if (ctx.state === "suspended") {
+    ctx.resume();
+  }
+}
+
+function playWhack() {
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.connect(g);
+  g.connect(ctx.destination);
+  o.frequency.setValueAtTime(300, ctx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 0.15);
+  g.gain.setValueAtTime(1, ctx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+  o.start();
+  o.stop(ctx.currentTime + 0.15);
+}
+
+function playBomb() {
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.type = "sawtooth";
+  o.connect(g);
+  g.connect(ctx.destination);
+  o.frequency.setValueAtTime(150, ctx.currentTime);
+  o.frequency.exponentialRampToValueAtTime(40, ctx.currentTime + 0.3);
+  g.gain.setValueAtTime(1, ctx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+  o.start();
+  o.stop(ctx.currentTime + 0.3);
+}
+
+function playMiss() {
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.type = "sine";
+  o.connect(g);
+  g.connect(ctx.destination);
+  o.frequency.setValueAtTime(200, ctx.currentTime);
+  g.gain.setValueAtTime(0.3, ctx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.1);
+  o.start();
+  o.stop(ctx.currentTime + 0.1);
+}
+
 const GAME_DURATION = 30;
 const POP_MIN_MS = 650;
 const POP_MAX_MS = 1150;
@@ -98,16 +148,19 @@ function handleHit(index) {
     return;
   }
 
+  ensureAudioReady();
   const hole = holes[index];
   const hitType = state.activeType;
   state.canHit = false;
   hole.classList.add("hit");
 
   if (hitType === "bomb") {
+    playBomb();
     endGame("bomb");
     return;
   }
 
+  playWhack();
   state.score += 1;
   updateHud();
   statusText.textContent = "Nice hit";
@@ -135,6 +188,9 @@ function chooseNextHole() {
 
   window.clearTimeout(state.popTimerId);
   state.popTimerId = window.setTimeout(() => {
+    if (state.activeType === "mole") {
+      playMiss();
+    }
     clearActiveCharacter();
     if (state.running) {
       scheduleNextPop(220);
@@ -165,6 +221,7 @@ function endGame(reason) {
 }
 
 function startGame() {
+  ensureAudioReady();
   state.score = 0;
   state.timeLeft = GAME_DURATION;
   state.running = true;
@@ -200,6 +257,7 @@ function goHome() {
 holes.forEach((hole, index) => {
   hole.addEventListener("pointerdown", (event) => {
     event.preventDefault();
+    ensureAudioReady();
     handleHit(index);
   });
 });
