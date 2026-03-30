@@ -1,36 +1,46 @@
-# 🐭 Whack-A-Mole
+# 🐭 Whack-A-Mole Game
 
-A fun browser-based Whack-A-Mole game built with vanilla HTML, CSS, and JavaScript.
+A fun and interactive browser-based Whack-A-Mole game built using HTML, CSS, and JavaScript.
 
-🎮 [Play Live →](https://manyagkarle13.github.io/whack-a-mole/)
+🎮 **[Play Live →](https://manyagkarle13.github.io/whack-a-mole/)**
 
-## How to Play
-- A mole and a bomb pop up randomly across 9 holes
-- **Click the mole** to score points
-- **Avoid the bomb** — hitting it costs you a life
-- You have 3 lives and 30 seconds — get the highest score!
+## 🎯 How to Play
 
-## Features
-- Smooth mole animations
-- Sound effects (Web Audio API — no files needed)
-- Lives system with bomb penalty
-- Speed increases as your score grows
-- Works in any modern browser
+* A mole and a bomb appear randomly across 9 holes
+* Click the **mole** to score points
+* Avoid the **bomb** — hitting it costs one life
+* You have **3 lives** and **30 seconds** to get the highest score
 
-## Tech Stack
-- HTML5
-- CSS3
-- Vanilla JavaScript (no libraries)
+---
 
-## Run Locally
+## 🚀 Features
+
+* Smooth mole animations
+* Lives system with bomb penalty
+* Increasing difficulty as score grows
+* Fully responsive and works in modern browsers
+
+---
+
+## 🛠 Tech Stack
+
+* HTML5
+* CSS3
+* JavaScript (Vanilla)
+
+---
+
+## ▶ Run Locally
+
 ```bash
 git clone https://github.com/manyagkarle13/whack-a-mole.git
 cd whack-a-mole
-# Just open index.html in your browser!
 ```
 
-## Screenshots
-<!-- Add a screenshot of your game here -->
+Then open:
 
+```text
+index.html
+```
 ---
 Built by [Manya](https://github.com/manyagkarle13)
