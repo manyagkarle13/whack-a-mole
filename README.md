@@ -2,6 +2,7 @@
 
 A fun and interactive browser-based Whack-A-Mole game built using HTML, CSS, and JavaScript.
 
+<<<<<<< HEAD:README.md
 ---
 
 ## 🎮 Play Live
@@ -9,6 +10,9 @@ A fun and interactive browser-based Whack-A-Mole game built using HTML, CSS, and
 👉 https://manyagkarle13.github.io/whack-a-mole/
 
 ---
+=======
+🎮 **[Play Live →](https://manyagkarle13.github.io/whack-a-mole/)
+>>>>>>> 5822c40359fc611fb23b44eec13dc841f194d13e:README
 
 ## 🎯 How to Play
 
@@ -50,5 +54,9 @@ index.html
 ```
 
 ---
+<<<<<<< HEAD:README.md
 
 Built by **Manya**
+=======
+Built by [Manya](https://github.com/manyagkarle13)
+>>>>>>> 5822c40359fc611fb23b44eec13dc841f194d13e:README
