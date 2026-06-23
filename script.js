@@ -26,10 +26,20 @@ function handleHit(index) {
   updateHud();
   statusText.textContent = "Nice hit";
   window.clearTimeout(state.popTimerId);
+  
+  // Define game duration in seconds
+  const GAME_DURATION = 60; // 1 minute = 60 seconds
+  
+  // Calculate remaining time
+  const remainingTime = GAME_DURATION - Math.floor(Date.now() / 1000);
+  
+  // Set a countdown timer
   window.setTimeout(() => {
     clearActiveCharacter();
-    if (state.running) {
+    if (state.running && remainingTime > 0) {
       scheduleNextPop(180);
+    } else if (state.running) {
+      endGame("time");
     }
   }, 180);
 }
